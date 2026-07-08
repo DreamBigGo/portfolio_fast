@@ -97,12 +97,18 @@ export const projects: Project[] = [
     name: "SAE-SYSTEM",
     year: 2025,
     tagline: {
-      fr: "SAE Système (IUT de Paris).",
-      en: "Systems SAE project (IUT de Paris).",
+      fr: "Site sur les machines virtuelles et serveurs, hébergé sur une VM Linux Fedora.",
+      en: "Site about virtual machines and servers, hosted on a Linux Fedora VM.",
+    },
+    summary: {
+      fr: "Site vitrine réalisé avec Bootstrap, puis déployé et hébergé sur une machine virtuelle Linux Fedora (mise en ligne via SSH/SFTP).",
+      en: "Showcase site built with Bootstrap, then deployed and hosted on a Linux Fedora virtual machine (published over SSH/SFTP).",
     },
     skills: [
       { skillId: "html", level: "intermediate" },
       { skillId: "css", level: "intermediate" },
+      { skillId: "bootstrap", level: "intermediate" },
+      { skillId: "linux", level: "intermediate" },
     ],
   },
   {
