@@ -1,6 +1,7 @@
 import { Cpu, Layout, type LucideIcon, Server, Terminal } from "lucide-react";
+import type { Locale } from "@/i18n/config";
 import { getSkillsOverview } from "@/lib/skills-overview";
-import type { SkillCategory, SkillLevel } from "@/lib/skills";
+import { skillName, type SkillCategory, type SkillLevel } from "@/lib/skills";
 
 interface SkillsSectionLabels {
   heading: string;
@@ -24,7 +25,13 @@ const levelDot: Record<SkillLevel, string> = {
  * Vue globale des compétences, dérivée par agrégation des expériences/projets.
  * Server Component : les icônes Lucide sont rendues en SVG statique au build.
  */
-export function SkillsSection({ labels }: { labels: SkillsSectionLabels }) {
+export function SkillsSection({
+  labels,
+  lang,
+}: {
+  labels: SkillsSectionLabels;
+  lang: Locale;
+}) {
   const groups = getSkillsOverview();
 
   return (
@@ -68,7 +75,7 @@ export function SkillsSection({ labels }: { labels: SkillsSectionLabels }) {
                         aria-hidden="true"
                       />
                       <span className="text-sm text-black dark:text-white">
-                        {skill.name}
+                        {skillName(skill, lang)}
                       </span>
                       <span
                         className={`ml-auto h-2 w-2 rounded-full ${levelDot[level]}`}

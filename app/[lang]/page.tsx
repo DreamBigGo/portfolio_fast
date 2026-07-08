@@ -53,7 +53,7 @@ export default async function Home({ params }: HomeProps) {
       </section>
 
       <div className="border-t border-zinc-200 dark:border-zinc-800">
-        <SkillsSection labels={dict.skills} />
+        <SkillsSection labels={dict.skills} lang={lang} />
       </div>
     </main>
   );

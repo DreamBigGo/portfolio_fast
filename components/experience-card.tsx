@@ -57,6 +57,7 @@ export function ExperienceCard({
             <SkillBadge
               skill={skillsById[skillId]}
               level={level}
+              lang={lang}
               levelLabel={levelLabels[level]}
             />
           </li>

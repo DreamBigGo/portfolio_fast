@@ -44,6 +44,10 @@ export const experiences: Experience[] = [
       { skillId: "docker", level: "improved" },
       { skillId: "git", level: "improved" },
       { skillId: "ci-cd", level: "improved" },
+      { skillId: "ai-agents", level: "acquired" },
+      { skillId: "claude-code", level: "acquired" },
+      { skillId: "antigravity", level: "acquired" },
+      { skillId: "github-copilot", level: "acquired" },
     ],
   },
 ];
