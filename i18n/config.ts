@@ -8,6 +8,9 @@ export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = "fr";
 
+/** Champ de contenu traduit dans chaque locale (données structurées `lib/`). */
+export type LocalizedText = Record<Locale, string>;
+
 /** Garde de type : restreint une chaîne quelconque à une locale supportée. */
 export const isLocale = (value: string): value is Locale =>
   (locales as readonly string[]).includes(value);

@@ -11,12 +11,12 @@ import { getDictionary, type Dictionary } from "./dictionaries";
 /** Construit les liens de navigation localisés dans l'ordre d'affichage. */
 function buildNavItems(lang: Locale, nav: Dictionary["nav"]): NavItem[] {
   return [
-    { href: `/${lang}`, label: nav.home },
-    { href: `/${lang}/experiences`, label: nav.experiences },
-    { href: `/${lang}/etudes`, label: nav.etudes },
-    { href: `/${lang}/projets`, label: nav.projets },
-    { href: `/${lang}/hobbies`, label: nav.hobbies },
-    { href: `/${lang}/contact`, label: nav.contact },
+    { id: "home", href: `/${lang}`, label: nav.home },
+    { id: "experiences", href: `/${lang}/experiences`, label: nav.experiences },
+    { id: "etudes", href: `/${lang}/etudes`, label: nav.etudes },
+    { id: "projets", href: `/${lang}/projets`, label: nav.projets },
+    { id: "hobbies", href: `/${lang}/hobbies`, label: nav.hobbies },
+    { id: "contact", href: `/${lang}/contact`, label: nav.contact },
   ];
 }
 

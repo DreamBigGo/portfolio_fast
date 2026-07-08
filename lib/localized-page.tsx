@@ -1,3 +1,11 @@
+import {
+  Briefcase,
+  FolderGit2,
+  GraduationCap,
+  Heart,
+  type LucideIcon,
+  Mail,
+} from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PagePlaceholder } from "@/components/page-placeholder";
@@ -5,6 +13,14 @@ import { isLocale } from "@/i18n/config";
 import { getDictionary, type Dictionary } from "@/app/[lang]/dictionaries";
 
 type PageKey = keyof Dictionary["pages"];
+
+const pageIcon: Record<PageKey, LucideIcon> = {
+  experiences: Briefcase,
+  etudes: GraduationCap,
+  projets: FolderGit2,
+  hobbies: Heart,
+  contact: Mail,
+};
 
 interface RouteParams {
   params: Promise<{ lang: string }>;
@@ -34,6 +50,7 @@ export function createLocalizedPage(key: PageKey) {
     const page = pages[key];
     return (
       <PagePlaceholder
+        icon={pageIcon[key]}
         eyebrow={page.eyebrow}
         title={page.title}
         description={page.description}

@@ -1,14 +1,42 @@
 "use client";
 
+import {
+  Briefcase,
+  FolderGit2,
+  GraduationCap,
+  Heart,
+  Home,
+  type LucideIcon,
+  Mail,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import type { Locale } from "@/i18n/config";
 
+/** Clés stables des entrées de navigation (mappées vers une icône ici). */
+export type NavId =
+  | "home"
+  | "experiences"
+  | "etudes"
+  | "projets"
+  | "hobbies"
+  | "contact";
+
 export interface NavItem {
+  id: NavId;
   href: string;
   label: string;
 }
+
+const navIcon: Record<NavId, LucideIcon> = {
+  home: Home,
+  experiences: Briefcase,
+  etudes: GraduationCap,
+  projets: FolderGit2,
+  hobbies: Heart,
+  contact: Mail,
+};
 
 interface MainNavProps {
   /** Locale active (pour identifier la racine). */
@@ -38,18 +66,22 @@ export function MainNav({ lang, items }: MainNavProps) {
       ? "font-semibold text-orange-500"
       : "font-medium text-zinc-600 transition-colors hover:text-black dark:text-zinc-400 dark:hover:text-white";
 
-  const renderLink = ({ href, label }: NavItem) => (
-    <li key={href}>
-      <Link
-        href={href}
-        onClick={() => setOpen(false)}
-        aria-current={isActive(href) ? "page" : undefined}
-        className={`block px-2 py-1 text-sm ${linkClass(href)}`}
-      >
-        {label}
-      </Link>
-    </li>
-  );
+  const renderLink = ({ id, href, label }: NavItem) => {
+    const Icon = navIcon[id];
+    return (
+      <li key={href}>
+        <Link
+          href={href}
+          onClick={() => setOpen(false)}
+          aria-current={isActive(href) ? "page" : undefined}
+          className={`flex items-center gap-2 px-2 py-1 text-sm ${linkClass(href)}`}
+        >
+          <Icon className="h-4 w-4" aria-hidden="true" />
+          {label}
+        </Link>
+      </li>
+    );
+  };
 
   return (
     <>
