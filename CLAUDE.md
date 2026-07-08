@@ -1,1 +1,48 @@
-@AGENTS.md
+# Instructions Claude Code - Site Portfolio
+
+Ce fichier contient les directives de développement, de structure et de workflow pour ce projet de site portfolio.
+
+## 1. Contexte & Stack Technique
+- **Projet :** Site Portfolio d'Ingénierie Informatique / Développement.
+- **Framework :** Next.js (App Router, routes dynamiques). 
+  - *Attention :* Cette version de Next.js peut comporter des changements majeurs. Référez-vous au guide dans [node_modules/next/dist/docs/](file:///home/speshwa/WebstormProjects/portfolio_fast/node_modules/next/dist/docs/index.md) avant d'écrire du code.
+- **Langage :** TypeScript avec mode strict activé.
+- **Design System :** Tailwind CSS avec support natif du Mode Sombre (`dark:`) et Mode Clair.
+- **Palette de couleurs imposée :** Orange, Vert, Blanc, Noir (à utiliser de manière équilibrée et esthétique).
+- **Esthétique :** Minimalisme, simplicité, animations fluides et légères (ex: Framer Motion ou transitions CSS pures).
+- **Internationalisation (i18n) :** Support multilingue requis (Français et Anglais) pour l'intégralité du site.
+
+## 2. Structure des Pages (App Router)
+Le projet doit être structuré avec les routes suivantes dans le dossier `app/` :
+- `app/page.tsx` : Accueil épuré (Présentation flash, tagline) - Route `/(home)`
+- `app/experiences/page.tsx` : Parcours professionnel et stages
+- `app/etudes/page.tsx` : Formations et diplômes
+- `app/competences/page.tsx` : Stack technique ordonnée (Frontend, Backend, Outils)
+- `app/projets/page.tsx` : Liste des projets avec filtres
+- `app/projets/[id]/page.tsx` : Détail d'une réalisation (Route dynamique)
+- `app/hobbies/page.tsx` : Centres d'intérêt et projets personnels
+- `app/contact/page.tsx` : Formulaire de contact (géré via Server Actions)
+
+## 3. Normes de Code & Règles de Développement
+- **Modularité :** Code hautement modulaire. Créer des composants atomiques réutilisables et des hooks personnalisés pour la logique (ex: filtrage, animations).
+- **Taille limite :** Maximum 150 lignes de code par fonction ou composant. En cas de dépassement nécessaire, proposez un découpage ou justifiez la complexité.
+- **Architecture & Nommage :** Dossiers et fichiers nommés en minuscules/kebab-case (ex: `project-card.tsx`). Éviter les noms génériques ambigus.
+- **Server vs Client Components :** Utiliser les React Server Components (RSC) par défaut. N'ajouter `'use client'` que lorsque c'est strictement nécessaire (states, animations, gestionnaires d'événements).
+- **Typage Strict :** L'utilisation de `any` est strictement interdite. Tous les types et interfaces doivent être définis de manière explicite et propre.
+
+## 4. Workflow & Plugins installés dans Claude Code
+- **Utilisation des outils :** Utilisez systématiquement les outils spécialisés du système (recherche textuelle, lecture/écriture ciblée, exécution de commandes) plutôt que de deviner ou de faire de grandes modifications manuelles.
+- **Plugins installés sur ce projet :**
+  - `frontend-design` : Utilisé automatiquement par Claude pour concevoir des interfaces soignées, uniques et fluides (Palette : Orange, Vert, Blanc, Noir, avec animations Framer Motion ou CSS pures).
+  - `typescript-lsp` : Serveur de langage TypeScript/JavaScript pour l'auto-complétion, la navigation et le typage strict.
+  - `/code-review` : Commande permettant de lancer une revue de code multi-agents sur les PRs afin d'auditer les modifications et de vérifier la conformité avec ce fichier `CLAUDE.md`.
+  - `BMAD-METHOD` (Brief, Map, Act, Deliver) : Framework de développement agile basé sur des agents (PM, Architecte, Dev, QA) configuré sous forme de skills Claude Code dans `.claude/skills`.
+    - Utilisez les skills BMAD comme `bmad-help` pour de l'aide générale, `bmad-create-prd`, `bmad-create-architecture`, `bmad-dev-story`, ou `bmad-code-review` pour guider le cycle de vie du projet.
+    - Les dossiers `_bmad/` (fichiers de configuration et scripts) et `_bmad-output/` (artefacts de planification et livrables) structurent le workflow.
+  - `/commit` et `/commit-push-pr` : Commandes intégrées pour automatiser la création de commits et de PRs propres.
+- **Validation obligatoire :** Après chaque modification majeure :
+  1. Résumez les changements effectués.
+  2. Lancez la validation de compilation TypeScript avec `npm run build` ou `npx tsc --noEmit`.
+  3. Vérifiez qu'il n'y a pas de régressions ou d'erreurs de linter.
+
+

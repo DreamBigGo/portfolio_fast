@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Home",
+    "experiences": "Experience",
+    "etudes": "Education",
+    "competences": "Skills",
+    "projets": "Projects",
+    "hobbies": "Hobbies",
+    "contact": "Contact"
+  },
+  "home": {
+    "metaTitle": "Home",
+    "metaDescription": "Software engineering portfolio: background, skills and work.",
+    "eyebrow": "Software engineer",
+    "headlineStart": "I build ",
+    "headlineAccent": "simple, refined",
+    "headlineEnd": " web products.",
+    "description": "Development, software engineering and interface design. Explore my background, skills and work.",
+    "ctaProjects": "View projects",
+    "ctaContact": "Get in touch"
+  },
+  "pages": {
+    "experiences": {
+      "eyebrow": "Portfolio",
+      "title": "Experience",
+      "description": "My professional background and internships: the work, the technologies and what I learned along the way.",
+      "metaDescription": "Professional background, internships and assignments."
+    },
+    "etudes": {
+      "eyebrow": "Portfolio",
+      "title": "Education",
+      "description": "My education and degrees, from academic studies to complementary certifications.",
+      "metaDescription": "Education and degrees."
+    },
+    "competences": {
+      "eyebrow": "Portfolio",
+      "title": "Skills",
+      "description": "My technical stack organised by area: Frontend, Backend and Tools.",
+      "metaDescription": "Technical stack: Frontend, Backend and Tools."
+    },
+    "projets": {
+      "eyebrow": "Portfolio",
+      "title": "Projects",
+      "description": "My work, filterable by technology and domain.",
+      "metaDescription": "List of projects with filters."
+    },
+    "hobbies": {
+      "eyebrow": "Portfolio",
+      "title": "Hobbies",
+      "description": "My interests and personal projects, beyond the code.",
+      "metaDescription": "Interests and personal projects."
+    },
+    "contact": {
+      "eyebrow": "Portfolio",
+      "title": "Contact",
+      "description": "A project, a question? The contact form (handled via Server Actions) is coming here.",
+      "metaDescription": "Contact form."
+    }
+  },
+  "projectDetail": {
+    "eyebrow": "Project",
+    "titlePrefix": "Project",
+    "description": "Project details. Context, goals, technical stack and results will be presented here.",
+    "metaTitlePrefix": "Project",
+    "metaDescriptionPrefix": "Details of project"
+  }
+}

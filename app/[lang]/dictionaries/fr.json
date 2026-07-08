@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "experiences": "Expériences",
+    "etudes": "Études",
+    "competences": "Compétences",
+    "projets": "Projets",
+    "hobbies": "Hobbies",
+    "contact": "Contact"
+  },
+  "home": {
+    "metaTitle": "Accueil",
+    "metaDescription": "Portfolio d'ingénierie informatique : parcours, compétences et réalisations.",
+    "eyebrow": "Ingénieur informatique",
+    "headlineStart": "Je conçois des produits web ",
+    "headlineAccent": "simples & soignés",
+    "headlineEnd": ".",
+    "description": "Développement, ingénierie logicielle et design d'interfaces. Découvrez mon parcours, mes compétences et mes réalisations.",
+    "ctaProjects": "Voir les projets",
+    "ctaContact": "Me contacter"
+  },
+  "pages": {
+    "experiences": {
+      "eyebrow": "Portfolio",
+      "title": "Expériences",
+      "description": "Mon parcours professionnel et mes stages : les missions, les technologies et ce que j'y ai appris.",
+      "metaDescription": "Parcours professionnel, stages et missions."
+    },
+    "etudes": {
+      "eyebrow": "Portfolio",
+      "title": "Études",
+      "description": "Mes formations et diplômes, du cursus académique aux certifications complémentaires.",
+      "metaDescription": "Formations et diplômes."
+    },
+    "competences": {
+      "eyebrow": "Portfolio",
+      "title": "Compétences",
+      "description": "Ma stack technique organisée par domaine : Frontend, Backend et Outils.",
+      "metaDescription": "Stack technique : Frontend, Backend et Outils."
+    },
+    "projets": {
+      "eyebrow": "Portfolio",
+      "title": "Projets",
+      "description": "Mes réalisations, filtrables par technologie et par domaine.",
+      "metaDescription": "Liste des réalisations avec filtres."
+    },
+    "hobbies": {
+      "eyebrow": "Portfolio",
+      "title": "Hobbies",
+      "description": "Mes centres d'intérêt et projets personnels, au-delà du code.",
+      "metaDescription": "Centres d'intérêt et projets personnels."
+    },
+    "contact": {
+      "eyebrow": "Portfolio",
+      "title": "Contact",
+      "description": "Un projet, une question ? Le formulaire de contact (géré via Server Actions) arrive ici.",
+      "metaDescription": "Formulaire de contact."
+    }
+  },
+  "projectDetail": {
+    "eyebrow": "Projet",
+    "titlePrefix": "Réalisation",
+    "description": "Détail de la réalisation. Contexte, objectifs, stack technique et résultats seront présentés ici.",
+    "metaTitlePrefix": "Projet",
+    "metaDescriptionPrefix": "Détail de la réalisation"
+  }
+}

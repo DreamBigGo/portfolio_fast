@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+    <!--
+      Redirection de locale statique (remplace le `proxy.ts`, indisponible en
+      export statique). On choisit la langue depuis le navigateur, avec repli FR.
+      `<noscript>` assure une redirection même sans JavaScript.
+    -->
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=./fr/" />
+    </noscript>
+    <script>
+      (function () {
+        var supported = ["fr", "en"];
+        var fallback = "fr";
+        var lang = (navigator.language || fallback).slice(0, 2).toLowerCase();
+        var target = supported.indexOf(lang) !== -1 ? lang : fallback;
+        // Chemin relatif : résout sous /portfolio_fast/ sans coder le basePath.
+        location.replace("./" + target + "/");
+      })();
+    </script>
+  </head>
+  <body>
+    <a href="./fr/">Entrer / Enter</a>
+  </body>
+</html>
