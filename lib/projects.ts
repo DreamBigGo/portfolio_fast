@@ -4,71 +4,162 @@ import type { SkillRef } from "./skills";
 export interface Project {
   /** Identifiant stable (slug), utilisé par la route `/projets/[id]`. */
   id: string;
-  name: LocalizedText;
-  tagline: LocalizedText;
+  /** Nom affiché (nom propre du projet). */
+  name: string;
   /** Année de réalisation. */
   year: number;
-  summary: LocalizedText;
-  /** Compétences acquises ou renforcées sur ce projet. */
+  /** Accroche courte, une ligne. */
+  tagline: LocalizedText;
+  /** Description plus détaillée (optionnelle), affichée sur le détail. */
+  summary?: LocalizedText;
+  /** Compétences mobilisées, avec le niveau de maîtrise démontré. */
   skills: SkillRef[];
 }
 
-/** Données d'exemple — à remplacer par les vraies réalisations. */
+/** Projets réalisés durant la scolarité (IUT de Paris — Rives de Seine). */
 export const projects: Project[] = [
   {
-    id: "portfolio",
-    name: { fr: "Portfolio", en: "Portfolio" },
-    tagline: {
-      fr: "Site portfolio multilingue en Next.js.",
-      en: "Multilingual portfolio site built with Next.js.",
-    },
+    id: "openminds",
+    name: "OpenMinds",
     year: 2026,
-    summary: {
-      fr: "Portfolio statique bilingue (FR/EN) déployé sur GitHub Pages via GitHub Actions.",
-      en: "Bilingual (FR/EN) static portfolio deployed to GitHub Pages via GitHub Actions.",
+    tagline: {
+      fr: "Projet d'équipe (SAE S4) développé en Kotlin.",
+      en: "Team project (SAE S4) built in Kotlin.",
     },
     skills: [
-      { skillId: "nextjs", level: "advanced" },
-      { skillId: "typescript", level: "intermediate" },
-      { skillId: "tailwind", level: "advanced" },
-      { skillId: "ci-cd", level: "intermediate" },
+      { skillId: "kotlin", level: "intermediate" },
+      { skillId: "git", level: "intermediate" },
     ],
   },
   {
-    id: "task-manager",
-    name: { fr: "Gestionnaire de tâches", en: "Task Manager" },
+    id: "powerhome",
+    name: "PowerHome",
+    year: 2026,
     tagline: {
-      fr: "Application de suivi de tâches en temps réel.",
-      en: "Real-time task tracking application.",
+      fr: "Mini-projet IUT développé en Java.",
+      en: "IUT mini-project built in Java.",
     },
-    year: 2025,
+    skills: [{ skillId: "java", level: "intermediate" }],
+  },
+  {
+    id: "s3-01",
+    name: "S3-01",
+    year: 2026,
+    tagline: {
+      fr: "Refonte du site de l'association AgirABCD.",
+      en: "Redesign of the AgirABCD association website.",
+    },
     summary: {
-      fr: "Application full-stack de gestion de tâches avec API et base de données relationnelle.",
-      en: "Full-stack task management app with an API and a relational database.",
+      fr: "Frontend HTML/CSS/JavaScript, backend PHP/SQL et base de données MariaDB. Objectifs : modernisation, accessibilité, sécurité et nouvelles fonctionnalités.",
+      en: "HTML/CSS/JavaScript frontend, PHP/SQL backend and a MariaDB database. Goals: modernisation, accessibility, security and new features.",
     },
     skills: [
-      { skillId: "react", level: "intermediate" },
-      { skillId: "nodejs", level: "basics" },
-      { skillId: "postgresql", level: "intermediate" },
-      { skillId: "docker", level: "basics" },
+      { skillId: "php", level: "intermediate" },
+      { skillId: "javascript", level: "intermediate" },
+      { skillId: "html", level: "advanced" },
+      { skillId: "css", level: "advanced" },
+      { skillId: "sql", level: "intermediate" },
+      { skillId: "git", level: "intermediate" },
     ],
   },
   {
-    id: "design-system",
-    name: { fr: "Design System", en: "Design System" },
-    tagline: {
-      fr: "Bibliothèque de composants réutilisables.",
-      en: "Reusable component library.",
-    },
+    id: "sae-ihm",
+    name: "SAE-IHM",
     year: 2025,
-    summary: {
-      fr: "Système de composants documenté, pensé pour la cohérence et l'accessibilité.",
-      en: "Documented component system focused on consistency and accessibility.",
+    tagline: {
+      fr: "Application avec interface homme-machine en Visual Basic .NET.",
+      en: "Application with a graphical user interface in Visual Basic .NET.",
+    },
+    skills: [{ skillId: "vbnet", level: "intermediate" }],
+  },
+  {
+    id: "octoverso",
+    name: "OCTOVERSO",
+    year: 2025,
+    tagline: {
+      fr: "SAE de programmation en C.",
+      en: "C programming project (SAE).",
+    },
+    skills: [{ skillId: "c", level: "intermediate" }],
+  },
+  {
+    id: "school",
+    name: "School",
+    year: 2024,
+    tagline: {
+      fr: "Recueil de projets d'apprentissage en C.",
+      en: "Collection of learning projects in C.",
+    },
+    skills: [{ skillId: "c", level: "basics" }],
+  },
+  {
+    id: "sae-system",
+    name: "SAE-SYSTEM",
+    year: 2025,
+    tagline: {
+      fr: "SAE Système (IUT de Paris).",
+      en: "Systems SAE project (IUT de Paris).",
     },
     skills: [
-      { skillId: "react", level: "advanced" },
-      { skillId: "tailwind", level: "advanced" },
-      { skillId: "figma", level: "intermediate" },
+      { skillId: "html", level: "intermediate" },
+      { skillId: "css", level: "intermediate" },
+    ],
+  },
+  {
+    id: "sae-bd-web",
+    name: "SAE-BD-WEB",
+    year: 2025,
+    tagline: {
+      fr: "Volet web d'une SAE Base de Données.",
+      en: "Web part of a database SAE project.",
+    },
+    skills: [
+      { skillId: "sql", level: "intermediate" },
+      { skillId: "html", level: "intermediate" },
+      { skillId: "css", level: "basics" },
+    ],
+  },
+  {
+    id: "r3-04",
+    name: "R3-04",
+    year: 2026,
+    tagline: {
+      fr: "Moteur d'échecs UCI (finales KRK) en Java, Clean Architecture.",
+      en: "UCI chess engine (KRK endgames) in Java, Clean Architecture.",
+    },
+    summary: {
+      fr: "Projet d'équipe : moteur d'échecs UCI spécialisé dans les finales Roi + Tour contre Roi (KRK), développé en Java selon la Clean Architecture, avec communication UCI (CuteChess).",
+      en: "Team project: a UCI chess engine specialised in King + Rook vs King (KRK) endgames, built in Java following Clean Architecture, with UCI communication (CuteChess).",
+    },
+    skills: [
+      { skillId: "java", level: "advanced" },
+      { skillId: "git", level: "intermediate" },
+    ],
+  },
+  {
+    id: "archiprojet",
+    name: "ArchiProjet",
+    year: 2026,
+    tagline: {
+      fr: "Projet d'architecture (serveurs) en Java.",
+      en: "Architecture project (servers) in Java.",
+    },
+    skills: [
+      { skillId: "java", level: "intermediate" },
+      { skillId: "git", level: "intermediate" },
+    ],
+  },
+  {
+    id: "graphes",
+    name: "GRAPHES",
+    year: 2025,
+    tagline: {
+      fr: "Projet d'équipe sur les graphes en Java.",
+      en: "Team project on graph algorithms in Java.",
+    },
+    skills: [
+      { skillId: "java", level: "intermediate" },
+      { skillId: "git", level: "intermediate" },
     ],
   },
 ];

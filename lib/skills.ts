@@ -1,29 +1,39 @@
 import type { LucideIcon } from "lucide-react";
 import {
   Atom,
+  Binary,
+  Blocks,
   Bot,
   Boxes,
   Braces,
   BrainCircuit,
   Cloud,
+  Code,
+  Coffee,
   Container,
   Database,
+  FileCode,
+  FileJson,
   GitBranch,
   Hexagon,
   Layers,
   Orbit,
+  PaintBucket,
   Palette,
   Server,
+  Smartphone,
   SquareTerminal,
+  Table,
   Triangle,
   Wind,
 } from "lucide-react";
 import type { Locale, LocalizedText } from "@/i18n/config";
 
 /** Domaines de compétences, dans l'ordre d'affichage souhaité. */
-export type SkillCategory = "frontend" | "backend" | "tools";
+export type SkillCategory = "languages" | "frontend" | "backend" | "tools";
 
 export const skillCategoryOrder: SkillCategory[] = [
+  "languages",
   "frontend",
   "backend",
   "tools",
@@ -75,7 +85,16 @@ export interface SkillRef {
 
 /** Catalogue des compétences. `as const` fige les `id` pour typer `SkillId`. */
 export const skills = [
-  { id: "typescript", name: "TypeScript", category: "frontend", icon: Braces },
+  { id: "typescript", name: "TypeScript", category: "languages", icon: Braces },
+  { id: "javascript", name: "JavaScript", category: "languages", icon: FileJson },
+  { id: "html", name: "HTML", category: "languages", icon: Code },
+  { id: "css", name: "CSS", category: "languages", icon: PaintBucket },
+  { id: "php", name: "PHP", category: "languages", icon: FileCode },
+  { id: "sql", name: "SQL", category: "languages", icon: Table },
+  { id: "java", name: "Java", category: "languages", icon: Coffee },
+  { id: "kotlin", name: "Kotlin", category: "languages", icon: Smartphone },
+  { id: "c", name: "C", category: "languages", icon: Binary },
+  { id: "vbnet", name: "Visual Basic .NET", category: "languages", icon: Blocks },
   { id: "react", name: "React", category: "frontend", icon: Atom },
   { id: "nextjs", name: "Next.js", category: "frontend", icon: Triangle },
   { id: "tailwind", name: "Tailwind CSS", category: "frontend", icon: Wind },

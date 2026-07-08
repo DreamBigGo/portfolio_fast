@@ -25,6 +25,7 @@
     "heading": "Compétences",
     "subtitle": "Regroupées par domaine, avec leur niveau de maîtrise.",
     "categories": {
+      "languages": "Langages",
       "frontend": "Frontend",
       "backend": "Backend",
       "tools": "Outils"

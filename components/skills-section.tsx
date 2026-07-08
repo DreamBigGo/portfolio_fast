@@ -1,4 +1,11 @@
-import { Cpu, Layout, type LucideIcon, Server, Terminal } from "lucide-react";
+import {
+  Code2,
+  Cpu,
+  Layout,
+  type LucideIcon,
+  Server,
+  Terminal,
+} from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { getSkillsOverview } from "@/lib/skills-overview";
 import {
@@ -16,6 +23,7 @@ interface SkillsSectionLabels {
 }
 
 const categoryIcon: Record<SkillCategory, LucideIcon> = {
+  languages: Code2,
   frontend: Layout,
   backend: Server,
   tools: Terminal,
@@ -56,7 +64,7 @@ export function SkillsSection({
         ))}
       </ul>
 
-      <div className="mt-8 grid gap-8 sm:grid-cols-3">
+      <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {groups.map((group) => {
           const CategoryIcon = categoryIcon[group.category];
           return (
