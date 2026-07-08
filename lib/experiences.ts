@@ -7,7 +7,8 @@ export interface Experience {
   role: LocalizedText;
   /** Nom de l'organisation (non traduit). */
   organization: string;
-  location: LocalizedText;
+  /** Lieu (optionnel). */
+  location?: LocalizedText;
   /** Début au format `YYYY-MM`. */
   startDate: string;
   /** Fin au format `YYYY-MM`, ou `null` si poste en cours. */
@@ -17,43 +18,32 @@ export interface Experience {
   skills: SkillRef[];
 }
 
-/** Données d'exemple — à remplacer par le contenu réel du parcours. */
 export const experiences: Experience[] = [
   {
-    id: "stage-fullstack",
-    role: { fr: "Stage — Développeur Full-Stack", en: "Internship — Full-Stack Developer" },
-    organization: "Acme Corp",
-    location: { fr: "Paris, France", en: "Paris, France" },
-    startDate: "2025-04",
-    endDate: "2025-09",
+    id: "holinea",
+    role: {
+      fr: "Stagiaire Full-Stack",
+      en: "Full-Stack Intern",
+    },
+    organization: "Holinea",
+    startDate: "2026-04",
+    endDate: "2026-06",
     summary: {
-      fr: "Développement d'une application web interne de gestion, du modèle de données à l'interface.",
-      en: "Built an internal web management application, from the data model to the interface.",
+      fr: "Formation de stagiaires aux outils du projet. Site réalisé de A à Z exclusivement à l'aide de l'IA.",
+      en: "Trained interns on the project's tools. Site built end-to-end exclusively with AI.",
     },
     skills: [
       { skillId: "typescript", level: "improved" },
+      { skillId: "nextjs", level: "improved" },
       { skillId: "react", level: "improved" },
-      { skillId: "nodejs", level: "acquired" },
-      { skillId: "postgresql", level: "acquired" },
+      { skillId: "tailwind", level: "improved" },
+      { skillId: "nestjs", level: "acquired" },
+      { skillId: "prisma", level: "acquired" },
+      { skillId: "supabase", level: "acquired" },
+      { skillId: "postgresql", level: "improved" },
+      { skillId: "docker", level: "improved" },
       { skillId: "git", level: "improved" },
-    ],
-  },
-  {
-    id: "projet-universitaire",
-    role: { fr: "Chef de projet technique", en: "Technical Project Lead" },
-    organization: "Université",
-    location: { fr: "À distance", en: "Remote" },
-    startDate: "2024-09",
-    endDate: "2025-02",
-    summary: {
-      fr: "Coordination d'une équipe de quatre étudiants pour livrer une plateforme collaborative.",
-      en: "Coordinated a team of four students to deliver a collaborative platform.",
-    },
-    skills: [
-      { skillId: "nextjs", level: "acquired" },
-      { skillId: "tailwind", level: "acquired" },
-      { skillId: "figma", level: "improved" },
-      { skillId: "ci-cd", level: "acquired" },
+      { skillId: "ci-cd", level: "improved" },
     ],
   },
 ];

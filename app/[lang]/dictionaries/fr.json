@@ -16,19 +16,22 @@
     "headlineEnd": ".",
     "description": "Développement, ingénierie logicielle et design d'interfaces. Découvrez mon parcours, mes compétences et mes réalisations.",
     "ctaProjects": "Voir les projets",
-    "ctaContact": "Me contacter",
-    "skills": {
-      "heading": "Compétences",
-      "subtitle": "Acquises et renforcées au fil des expériences et des projets.",
-      "categories": {
-        "frontend": "Frontend",
-        "backend": "Backend",
-        "tools": "Outils"
-      },
-      "levels": {
-        "acquired": "Acquise",
-        "improved": "Renforcée"
-      }
+    "ctaContact": "Me contacter"
+  },
+  "common": {
+    "present": "présent"
+  },
+  "skills": {
+    "heading": "Compétences",
+    "subtitle": "Acquises et renforcées au fil des expériences et des projets.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Outils"
+    },
+    "levels": {
+      "acquired": "Acquise",
+      "improved": "Renforcée"
     }
   },
   "pages": {

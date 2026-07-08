@@ -16,19 +16,22 @@
     "headlineEnd": " web products.",
     "description": "Development, software engineering and interface design. Explore my background, skills and work.",
     "ctaProjects": "View projects",
-    "ctaContact": "Get in touch",
-    "skills": {
-      "heading": "Skills",
-      "subtitle": "Gained and strengthened across experiences and projects.",
-      "categories": {
-        "frontend": "Frontend",
-        "backend": "Backend",
-        "tools": "Tools"
-      },
-      "levels": {
-        "acquired": "Gained",
-        "improved": "Strengthened"
-      }
+    "ctaContact": "Get in touch"
+  },
+  "common": {
+    "present": "present"
+  },
+  "skills": {
+    "heading": "Skills",
+    "subtitle": "Gained and strengthened across experiences and projects.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools"
+    },
+    "levels": {
+      "acquired": "Gained",
+      "improved": "Strengthened"
     }
   },
   "pages": {
