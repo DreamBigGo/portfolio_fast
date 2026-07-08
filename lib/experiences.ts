@@ -41,7 +41,7 @@ export const experiences: Experience[] = [
       { skillId: "prisma", level: "basics" },
       { skillId: "supabase", level: "basics" },
       { skillId: "postgresql", level: "intermediate" },
-      { skillId: "docker", level: "basics" },
+      { skillId: "docker", level: "intermediate" },
       { skillId: "git", level: "intermediate" },
       { skillId: "ci-cd", level: "intermediate" },
       { skillId: "ai-agents", level: "advanced" },
