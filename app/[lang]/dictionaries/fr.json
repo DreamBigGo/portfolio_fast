@@ -3,7 +3,6 @@
     "home": "Accueil",
     "experiences": "Expériences",
     "etudes": "Études",
-    "competences": "Compétences",
     "projets": "Projets",
     "hobbies": "Hobbies",
     "contact": "Contact"
@@ -31,12 +30,6 @@
       "title": "Études",
       "description": "Mes formations et diplômes, du cursus académique aux certifications complémentaires.",
       "metaDescription": "Formations et diplômes."
-    },
-    "competences": {
-      "eyebrow": "Portfolio",
-      "title": "Compétences",
-      "description": "Ma stack technique organisée par domaine : Frontend, Backend et Outils.",
-      "metaDescription": "Stack technique : Frontend, Backend et Outils."
     },
     "projets": {
       "eyebrow": "Portfolio",

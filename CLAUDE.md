@@ -15,13 +15,14 @@ Ce fichier contient les directives de développement, de structure et de workflo
 ## 2. Structure des Pages (App Router)
 Le projet doit être structuré avec les routes suivantes dans le dossier `app/` :
 - `app/page.tsx` : Accueil épuré (Présentation flash, tagline) - Route `/(home)`
-- `app/experiences/page.tsx` : Parcours professionnel et stages
+- `app/experiences/page.tsx` : Parcours professionnel et stages — chaque expérience référence ses compétences acquises/améliorées
 - `app/etudes/page.tsx` : Formations et diplômes
-- `app/competences/page.tsx` : Stack technique ordonnée (Frontend, Backend, Outils)
-- `app/projets/page.tsx` : Liste des projets avec filtres
-- `app/projets/[id]/page.tsx` : Détail d'une réalisation (Route dynamique)
+- `app/projets/page.tsx` : Liste des projets avec filtres (dont un filtre par compétence)
+- `app/projets/[id]/page.tsx` : Détail d'une réalisation (Route dynamique) — chaque projet référence ses compétences acquises/améliorées
 - `app/hobbies/page.tsx` : Centres d'intérêt et projets personnels
 - `app/contact/page.tsx` : Formulaire de contact (géré via Server Actions)
+
+> **Compétences (pas de page dédiée) :** Les compétences ne sont plus une page/section autonome (`app/competences` supprimée). Elles deviennent un **attribut** rattaché à chaque expérience et à chaque projet : **1 expérience ou 1 projet ⇒ N compétences**, chacune qualifiée comme « acquise » ou « améliorée ». Une éventuelle vue transversale des compétences doit être **dérivée par agrégation** de ces références (pas de source de données séparée).
 
 ## 3. Normes de Code & Règles de Développement
 - **Modularité :** Code hautement modulaire. Créer des composants atomiques réutilisables et des hooks personnalisés pour la logique (ex: filtrage, animations).

@@ -14,7 +14,6 @@ function buildNavItems(lang: Locale, nav: Dictionary["nav"]): NavItem[] {
     { href: `/${lang}`, label: nav.home },
     { href: `/${lang}/experiences`, label: nav.experiences },
     { href: `/${lang}/etudes`, label: nav.etudes },
-    { href: `/${lang}/competences`, label: nav.competences },
     { href: `/${lang}/projets`, label: nav.projets },
     { href: `/${lang}/hobbies`, label: nav.hobbies },
     { href: `/${lang}/contact`, label: nav.contact },
