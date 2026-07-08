@@ -2,6 +2,7 @@ import { experiences } from "./experiences";
 import { projects } from "./projects";
 import {
   skillCategoryOrder,
+  skillLevelRank,
   skills,
   type Skill,
   type SkillCategory,
@@ -36,8 +37,10 @@ function collectSkillRefs(): SkillRef[] {
 export function getSkillsOverview(): SkillGroup[] {
   const levelById = new Map<string, SkillLevel>();
   for (const { skillId, level } of collectSkillRefs()) {
-    if (levelById.get(skillId) === "acquired") continue;
-    levelById.set(skillId, level);
+    const current = levelById.get(skillId);
+    if (current === undefined || skillLevelRank[level] > skillLevelRank[current]) {
+      levelById.set(skillId, level);
+    }
   }
 
   return skillCategoryOrder

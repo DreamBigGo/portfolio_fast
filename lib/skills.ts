@@ -29,8 +29,25 @@ export const skillCategoryOrder: SkillCategory[] = [
   "tools",
 ];
 
-/** Niveau d'appropriation d'une compétence via une expérience/un projet. */
-export type SkillLevel = "acquired" | "improved";
+/**
+ * Niveau de maîtrise d'une compétence, du plus faible au plus fort :
+ * `basics` (Notions, gris) < `intermediate` (orange) < `advanced` (vert).
+ */
+export type SkillLevel = "basics" | "intermediate" | "advanced";
+
+/** Rang ordinal des niveaux (pour comparer / agréger). */
+export const skillLevelRank: Record<SkillLevel, number> = {
+  basics: 0,
+  intermediate: 1,
+  advanced: 2,
+};
+
+/** Classe Tailwind de la pastille de niveau (respecte la palette imposée). */
+export const skillLevelColor: Record<SkillLevel, string> = {
+  basics: "bg-zinc-400",
+  intermediate: "bg-orange-500",
+  advanced: "bg-green-500",
+};
 
 export interface Skill {
   /** Identifiant stable, référencé par les expériences et projets. */

@@ -23,15 +23,16 @@
   },
   "skills": {
     "heading": "Skills",
-    "subtitle": "Gained and strengthened across experiences and projects.",
+    "subtitle": "Grouped by area, with their mastery level.",
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend",
       "tools": "Tools"
     },
     "levels": {
-      "acquired": "Gained",
-      "improved": "Strengthened"
+      "basics": "Basics",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
     }
   },
   "pages": {

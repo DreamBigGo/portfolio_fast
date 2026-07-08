@@ -1,7 +1,12 @@
 import { Cpu, Layout, type LucideIcon, Server, Terminal } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { getSkillsOverview } from "@/lib/skills-overview";
-import { skillName, type SkillCategory, type SkillLevel } from "@/lib/skills";
+import {
+  skillLevelColor,
+  skillName,
+  type SkillCategory,
+  type SkillLevel,
+} from "@/lib/skills";
 
 interface SkillsSectionLabels {
   heading: string;
@@ -16,10 +21,8 @@ const categoryIcon: Record<SkillCategory, LucideIcon> = {
   tools: Terminal,
 };
 
-const levelDot: Record<SkillLevel, string> = {
-  acquired: "bg-green-500",
-  improved: "bg-orange-500",
-};
+/** Niveaux ordonnés (faible → fort) pour la légende. */
+const orderedLevels = Object.keys(skillLevelColor) as SkillLevel[];
 
 /**
  * Vue globale des compétences, dérivée par agrégation des expériences/projets.
@@ -45,9 +48,9 @@ export function SkillsSection({
       <p className="mt-2 text-zinc-600 dark:text-zinc-400">{labels.subtitle}</p>
 
       <ul className="mt-4 flex flex-wrap gap-4 text-sm text-zinc-500">
-        {(Object.keys(levelDot) as SkillLevel[]).map((level) => (
+        {orderedLevels.map((level) => (
           <li key={level} className="flex items-center gap-2">
-            <span className={`h-2 w-2 rounded-full ${levelDot[level]}`} />
+            <span className={`h-2 w-2 rounded-full ${skillLevelColor[level]}`} />
             {labels.levels[level]}
           </li>
         ))}
@@ -78,7 +81,7 @@ export function SkillsSection({
                         {skillName(skill, lang)}
                       </span>
                       <span
-                        className={`ml-auto h-2 w-2 rounded-full ${levelDot[level]}`}
+                        className={`ml-auto h-2 w-2 rounded-full ${skillLevelColor[level]}`}
                         title={labels.levels[level]}
                       />
                     </li>

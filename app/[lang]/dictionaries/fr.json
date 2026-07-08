@@ -23,15 +23,16 @@
   },
   "skills": {
     "heading": "Compétences",
-    "subtitle": "Acquises et renforcées au fil des expériences et des projets.",
+    "subtitle": "Regroupées par domaine, avec leur niveau de maîtrise.",
     "categories": {
       "frontend": "Frontend",
       "backend": "Backend",
       "tools": "Outils"
     },
     "levels": {
-      "acquired": "Acquise",
-      "improved": "Renforcée"
+      "basics": "Notions",
+      "intermediate": "Intermédiaire",
+      "advanced": "Avancé"
     }
   },
   "pages": {

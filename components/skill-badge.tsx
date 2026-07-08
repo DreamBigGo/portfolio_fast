@@ -1,10 +1,10 @@
 import type { Locale } from "@/i18n/config";
-import { skillName, type Skill, type SkillLevel } from "@/lib/skills";
-
-const levelDot: Record<SkillLevel, string> = {
-  acquired: "bg-green-500",
-  improved: "bg-orange-500",
-};
+import {
+  skillLevelColor,
+  skillName,
+  type Skill,
+  type SkillLevel,
+} from "@/lib/skills";
 
 interface SkillBadgeProps {
   skill: Skill;
@@ -25,7 +25,7 @@ export function SkillBadge({ skill, level, lang, levelLabel }: SkillBadgeProps) 
       <Icon className="h-3.5 w-3.5 text-zinc-500" aria-hidden="true" />
       {skillName(skill, lang)}
       <span
-        className={`h-1.5 w-1.5 rounded-full ${levelDot[level]}`}
+        className={`h-1.5 w-1.5 rounded-full ${skillLevelColor[level]}`}
         title={levelLabel}
       />
     </span>

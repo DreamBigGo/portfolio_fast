@@ -28,10 +28,10 @@ export const projects: Project[] = [
       en: "Bilingual (FR/EN) static portfolio deployed to GitHub Pages via GitHub Actions.",
     },
     skills: [
-      { skillId: "nextjs", level: "improved" },
-      { skillId: "typescript", level: "improved" },
-      { skillId: "tailwind", level: "improved" },
-      { skillId: "ci-cd", level: "improved" },
+      { skillId: "nextjs", level: "advanced" },
+      { skillId: "typescript", level: "intermediate" },
+      { skillId: "tailwind", level: "advanced" },
+      { skillId: "ci-cd", level: "intermediate" },
     ],
   },
   {
@@ -47,10 +47,10 @@ export const projects: Project[] = [
       en: "Full-stack task management app with an API and a relational database.",
     },
     skills: [
-      { skillId: "react", level: "improved" },
-      { skillId: "nodejs", level: "acquired" },
-      { skillId: "postgresql", level: "improved" },
-      { skillId: "docker", level: "acquired" },
+      { skillId: "react", level: "intermediate" },
+      { skillId: "nodejs", level: "basics" },
+      { skillId: "postgresql", level: "intermediate" },
+      { skillId: "docker", level: "basics" },
     ],
   },
   {
@@ -66,9 +66,9 @@ export const projects: Project[] = [
       en: "Documented component system focused on consistency and accessibility.",
     },
     skills: [
-      { skillId: "react", level: "improved" },
-      { skillId: "tailwind", level: "improved" },
-      { skillId: "figma", level: "acquired" },
+      { skillId: "react", level: "advanced" },
+      { skillId: "tailwind", level: "advanced" },
+      { skillId: "figma", level: "intermediate" },
     ],
   },
 ];

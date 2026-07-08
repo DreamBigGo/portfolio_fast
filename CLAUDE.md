@@ -8,7 +8,7 @@ Ce fichier contient les directives de développement, de structure et de workflo
   - *Attention :* Cette version de Next.js peut comporter des changements majeurs. Référez-vous au guide dans [node_modules/next/dist/docs/](file:///home/speshwa/WebstormProjects/portfolio_fast/node_modules/next/dist/docs/index.md) avant d'écrire du code.
 - **Langage :** TypeScript avec mode strict activé.
 - **Design System :** Tailwind CSS avec support natif du Mode Sombre (`dark:`) et Mode Clair.
-- **Palette de couleurs imposée :** Orange, Vert, Blanc, Noir (à utiliser de manière équilibrée et esthétique).
+- **Palette de couleurs imposée :** Orange, Vert, Blanc, Noir (à utiliser de manière équilibrée et esthétique). Les nuances de gris (`zinc`) sont admises comme neutres — ex. le palier « Notions » du système de niveaux de compétences (Notions/gris, Intermédiaire/orange, Avancé/vert).
 - **Esthétique :** Minimalisme, simplicité, animations fluides et légères (ex: Framer Motion ou transitions CSS pures).
 - **Internationalisation (i18n) :** Support multilingue requis (Français et Anglais) pour l'intégralité du site.
 
@@ -22,7 +22,15 @@ Le projet doit être structuré avec les routes suivantes dans le dossier `app/`
 - `app/hobbies/page.tsx` : Centres d'intérêt et projets personnels
 - `app/contact/page.tsx` : Formulaire de contact (géré via Server Actions)
 
-> **Compétences (pas de page dédiée) :** Les compétences ne sont plus une page/section autonome (`app/competences` supprimée). Elles deviennent un **attribut** rattaché à chaque expérience et à chaque projet : **1 expérience ou 1 projet ⇒ N compétences**, chacune qualifiée comme « acquise » ou « améliorée ». Une éventuelle vue transversale des compétences doit être **dérivée par agrégation** de ces références (pas de source de données séparée).
+> **Compétences (pas de page dédiée) :** Les compétences ne sont plus une page/section autonome (`app/competences` supprimée). Elles deviennent un **attribut** rattaché à chaque expérience et à chaque projet : **1 expérience ou 1 projet ⇒ N compétences**, chacune qualifiée par un **niveau de maîtrise sur 3 paliers** (du plus faible au plus fort) :
+>
+> | Niveau | Clé (`SkillLevel`) | Couleur |
+> |---|---|---|
+> | Notions | `basics` | Gris (`zinc-400`) |
+> | Intermédiaire | `intermediate` | Orange |
+> | Avancé | `advanced` | Vert |
+>
+> Le gris reste dans la palette imposée (nuance de Noir/Blanc). Une éventuelle vue transversale des compétences est **dérivée par agrégation** de ces références (le niveau le plus élevé l'emporte ; pas de source de données séparée).
 
 ## 3. Normes de Code & Règles de Développement
 - **Modularité :** Code hautement modulaire. Créer des composants atomiques réutilisables et des hooks personnalisés pour la logique (ex: filtrage, animations).
