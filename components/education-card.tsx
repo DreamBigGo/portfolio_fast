@@ -25,8 +25,8 @@ export function EducationCard({ education, lang, presentLabel }: EducationCardPr
             <img
               src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`}
               alt={`${institution} logo`}
-              width={120}
-              height={46}
+              width={52}
+              height={52}
               className="object-contain"
             />
           </div>
