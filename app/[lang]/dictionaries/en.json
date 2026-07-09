@@ -84,6 +84,7 @@
   },
   "projectDetail": {
     "eyebrow": "Project",
+    "repoLabel": "View the code on GitHub",
     "titlePrefix": "Project",
     "description": "Project details. Context, goals, technical stack and results will be presented here.",
     "metaTitlePrefix": "Project",
