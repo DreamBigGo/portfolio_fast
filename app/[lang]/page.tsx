@@ -1,4 +1,4 @@
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Languages, Mail } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SkillsSection } from "@/components/skills-section";
@@ -34,7 +34,23 @@ export default async function Home({ params }: HomeProps) {
         <p className="max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
           {home.description}
         </p>
-        <div className="mt-4 flex flex-wrap gap-4">
+
+        <div className="flex flex-wrap items-center gap-2">
+          <Languages className="h-4 w-4 shrink-0 text-zinc-400" aria-hidden="true" />
+          {dict.languages.map((spoken, i) => (
+            <span key={spoken.name} className="flex items-center gap-2">
+              <span className="text-sm text-zinc-700 dark:text-zinc-300">
+                {spoken.name}
+                <span className="ml-1 text-xs text-zinc-400">— {spoken.level}</span>
+              </span>
+              {i < dict.languages.length - 1 && (
+                <span className="text-zinc-300 dark:text-zinc-600" aria-hidden="true">·</span>
+              )}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-2 flex flex-wrap gap-4">
           <Link
             href={`/${lang}/projets`}
             className="inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200"

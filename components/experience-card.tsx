@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Building2, CalendarDays, MapPin } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Experience } from "@/lib/experiences";
@@ -21,14 +22,25 @@ export function ExperienceCard({
   presentLabel,
   levelLabels,
 }: ExperienceCardProps) {
-  const { role, organization, location, startDate, endDate, summary, skills } =
+  const { role, organization, logo, location, startDate, endDate, summary, skills } =
     experience;
 
   return (
     <article className="rounded-2xl border border-zinc-200 p-6 dark:border-zinc-800">
-      <h2 className="text-xl font-semibold tracking-tight text-black dark:text-white">
-        {role[lang]}
-      </h2>
+      <div className="flex items-start justify-between gap-4">
+        <h2 className="text-xl font-semibold tracking-tight text-black dark:text-white">
+          {role[lang]}
+        </h2>
+        {logo && (
+          <Image
+            src={logo}
+            alt={`${organization} logo`}
+            width={52}
+            height={52}
+            className="shrink-0 rounded-lg object-contain"
+          />
+        )}
+      </div>
 
       <dl className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-zinc-600 dark:text-zinc-400">
         <dd className="flex items-center gap-1.5">

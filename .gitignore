@@ -49,3 +49,6 @@ next-env.d.ts
 # Artefacts d'outillage BMAD
 /_bmad/
 /_bmad-output/
+
+# Données personnelles (ne pas versionner)
+Profile.pdf

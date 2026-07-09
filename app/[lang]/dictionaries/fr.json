@@ -21,6 +21,12 @@
   "common": {
     "present": "présent"
   },
+  "languages": [
+    { "name": "Français", "level": "Courant" },
+    { "name": "English", "level": "Courant" },
+    { "name": "Gujarati", "level": "Courant" },
+    { "name": "Deutsch", "level": "Notions" }
+  ],
   "skills": {
     "heading": "Compétences",
     "subtitle": "Regroupées par domaine, avec leur niveau de maîtrise.",

@@ -21,6 +21,12 @@
   "common": {
     "present": "present"
   },
+  "languages": [
+    { "name": "Français", "level": "Fluent" },
+    { "name": "English", "level": "Fluent" },
+    { "name": "Gujarati", "level": "Fluent" },
+    { "name": "Deutsch", "level": "Basic" }
+  ],
   "skills": {
     "heading": "Skills",
     "subtitle": "Grouped by area, with their mastery level.",

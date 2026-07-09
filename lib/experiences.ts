@@ -7,6 +7,8 @@ export interface Experience {
   role: LocalizedText;
   /** Nom de l'organisation (non traduit). */
   organization: string;
+  /** Chemin vers le logo de l'organisation (relatif à /public). */
+  logo?: string;
   /** Lieu (optionnel). */
   location?: LocalizedText;
   /** Début au format `YYYY-MM`. */
@@ -20,12 +22,29 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: "bibliotheque-robert-sabatier",
+    role: {
+      fr: "Bibliothécaire (CDD)",
+      en: "Library Staff (Fixed-term)",
+    },
+    organization: "Bibliothèque Robert Sabatier",
+    location: { fr: "Paris, France", en: "Paris, France" },
+    startDate: "2025-10",
+    endDate: "2026-07",
+    summary: {
+      fr: "Accueil et orientation des usagers, organisation des collections, mise en place d'événements culturels et réparation des ouvrages.",
+      en: "User reception and guidance, collection organisation, cultural event planning and book repair.",
+    },
+    skills: [],
+  },
+  {
     id: "holinea",
     role: {
       fr: "Stagiaire Full-Stack",
       en: "Full-Stack Intern",
     },
     organization: "Holinea",
+    logo: "/holinea-logo.svg",
     startDate: "2026-04",
     endDate: "2026-06",
     summary: {
