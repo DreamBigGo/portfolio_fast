@@ -172,7 +172,6 @@ export const projects: Project[] = [
       fr: "Travail en équipe de cinq. Moteur d'échecs UCI spécialisé dans les finales Roi + Tour contre Roi (KRK), développé en Java selon la Clean Architecture : communication UCI avec les interfaces graphiques (CuteChess), parsing des positions FEN, génération des coups légaux, détection des échecs, pats et mats, algorithme Minimax et évaluation spécialisée KRK.",
       en: "Team of five. UCI chess engine specialised in King + Rook vs King (KRK) endgames, built in Java following Clean Architecture: UCI communication with GUIs (CuteChess), FEN position parsing, legal move generation, check/stalemate/checkmate detection, Minimax algorithm and a KRK-specific evaluation.",
     },
-    repo: "https://github.com/joh4nn0/R3-04_203-204",
     skills: [
       { skillId: "java", level: "advanced" },
       { skillId: "git", level: "intermediate" },
@@ -190,7 +189,6 @@ export const projects: Project[] = [
       fr: "Projet d'architecture logicielle en Java : application client-serveur de gestion de documents, avec un protocole d'échange maison (BTTP2) et une gestion structurée des exceptions.",
       en: "Software architecture project in Java: a client-server document application, with a custom exchange protocol (BTTP2) and structured exception handling.",
     },
-    repo: "https://github.com/joh4nn0/ArchiProjet",
     skills: [
       { skillId: "java", level: "intermediate" },
       { skillId: "git", level: "intermediate" },
@@ -208,7 +206,6 @@ export const projects: Project[] = [
       fr: "SAE en équipe de quatre : bibliothèque de graphes en Java avec implémentation de l'algorithme de Dijkstra (plus court chemin), adaptateurs, animation et vérification des résultats, accompagnée de tests.",
       en: "SAE in a team of four: a Java graph library implementing Dijkstra's shortest-path algorithm, with adapters, animation, result checking and tests.",
     },
-    repo: "https://github.com/TristanD75/GRAPHES",
     skills: [
       { skillId: "java", level: "intermediate" },
       { skillId: "git", level: "intermediate" },
