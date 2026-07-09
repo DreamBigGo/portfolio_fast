@@ -1,8 +1,9 @@
 import { GraduationCap } from "lucide-react";
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { EducationCard } from "@/components/education-card";
+import { PageHeader } from "@/components/page-header";
 import { educations } from "@/lib/education";
+import { localizedMetadata } from "@/lib/localized-metadata";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "../dictionaries";
 
@@ -10,16 +11,7 @@ interface EtudesProps {
   params: Promise<{ lang: string }>;
 }
 
-export async function generateMetadata({ params }: EtudesProps): Promise<Metadata> {
-  const { lang } = await params;
-  if (!isLocale(lang)) return {};
-
-  const { pages } = await getDictionary(lang);
-  return {
-    title: pages.etudes.title,
-    description: pages.etudes.metaDescription,
-  };
-}
+export const generateMetadata = localizedMetadata("etudes");
 
 export default async function EtudesPage({ params }: EtudesProps) {
   const { lang } = await params;
@@ -30,16 +22,12 @@ export default async function EtudesPage({ params }: EtudesProps) {
 
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-6 py-24">
-      <span className="flex items-center gap-2 text-sm font-medium uppercase tracking-widest text-orange-500">
-        <GraduationCap className="h-4 w-4" aria-hidden="true" />
-        {page.eyebrow}
-      </span>
-      <h1 className="mt-4 text-4xl font-semibold tracking-tight text-black dark:text-white sm:text-5xl">
-        {page.title}
-      </h1>
-      <p className="mt-4 max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-        {page.description}
-      </p>
+      <PageHeader
+        icon={GraduationCap}
+        eyebrow={page.eyebrow}
+        title={page.title}
+        description={page.description}
+      />
 
       <div className="mt-12 flex flex-col gap-6">
         {educations.map((education) => (

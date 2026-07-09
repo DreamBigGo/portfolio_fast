@@ -2,6 +2,7 @@ import { CalendarDays, GraduationCap, MapPin } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Education } from "@/lib/education";
 import { formatPeriod } from "@/lib/format-date";
+import { LogoImage } from "./logo-image";
 
 interface EducationCardProps {
   education: Education;
@@ -19,16 +20,7 @@ export function EducationCard({ education, lang, presentLabel }: EducationCardPr
         <h2 className="text-xl font-semibold tracking-tight text-black dark:text-white">
           {degree[lang]}
         </h2>
-        {logo && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`}
-            alt={`${institution} logo`}
-            width={48}
-            height={48}
-            className="shrink-0 object-contain"
-          />
-        )}
+        {logo && <LogoImage src={logo} alt={`${institution} logo`} />}
       </div>
 
       <dl className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-zinc-600 dark:text-zinc-400">

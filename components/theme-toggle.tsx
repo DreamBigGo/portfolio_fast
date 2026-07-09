@@ -21,7 +21,7 @@ export function ThemeToggle({ label }: ThemeToggleProps) {
   }, []);
 
   const toggle = () => {
-    const next = !document.documentElement.classList.contains("dark");
+    const next = !isDark;
     document.documentElement.classList.toggle("dark", next);
     localStorage.setItem("theme", next ? "dark" : "light");
     setIsDark(next);

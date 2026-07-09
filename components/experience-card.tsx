@@ -3,6 +3,7 @@ import type { Locale } from "@/i18n/config";
 import type { Experience } from "@/lib/experiences";
 import { formatPeriod } from "@/lib/format-date";
 import { skillsById, type SkillLevel } from "@/lib/skills";
+import { LogoImage } from "./logo-image";
 import { SkillBadge } from "./skill-badge";
 
 interface ExperienceCardProps {
@@ -30,16 +31,7 @@ export function ExperienceCard({
         <h2 className="text-xl font-semibold tracking-tight text-black dark:text-white">
           {role[lang]}
         </h2>
-        {logo && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`}
-            alt={`${organization} logo`}
-            width={48}
-            height={48}
-            className="shrink-0 object-contain"
-          />
-        )}
+        {logo && <LogoImage src={logo} alt={`${organization} logo`} />}
       </div>
 
       <dl className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm text-zinc-600 dark:text-zinc-400">

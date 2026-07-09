@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SkillsSection } from "@/components/skills-section";
 import { isLocale } from "@/i18n/config";
+import { assetUrl } from "@/lib/asset-url";
 import { getDictionary } from "./dictionaries";
 
 interface HomeProps {
@@ -66,7 +67,7 @@ export default async function Home({ params }: HomeProps) {
             {home.ctaContact}
           </Link>
           <a
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/cv.pdf`}
+            href={assetUrl("/cv.pdf")}
             download
             className="inline-flex items-center gap-2 rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium transition-colors hover:border-green-500 hover:text-green-600 dark:border-zinc-700"
           >

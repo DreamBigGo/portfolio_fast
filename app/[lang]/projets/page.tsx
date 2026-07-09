@@ -1,7 +1,8 @@
 import { FolderGit2 } from "lucide-react";
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FilterableProjectGrid } from "@/components/filterable-project-grid";
+import { PageHeader } from "@/components/page-header";
+import { localizedMetadata } from "@/lib/localized-metadata";
 import { isLocale } from "@/i18n/config";
 import { projects } from "@/lib/projects";
 import { getDictionary } from "../dictionaries";
@@ -10,18 +11,7 @@ interface ProjetsProps {
   params: Promise<{ lang: string }>;
 }
 
-export async function generateMetadata({
-  params,
-}: ProjetsProps): Promise<Metadata> {
-  const { lang } = await params;
-  if (!isLocale(lang)) return {};
-
-  const { pages } = await getDictionary(lang);
-  return {
-    title: pages.projets.title,
-    description: pages.projets.metaDescription,
-  };
-}
+export const generateMetadata = localizedMetadata("projets");
 
 export default async function ProjetsPage({ params }: ProjetsProps) {
   const { lang } = await params;
@@ -33,16 +23,12 @@ export default async function ProjetsPage({ params }: ProjetsProps) {
 
   return (
     <main className="mx-auto w-full max-w-4xl flex-1 px-6 py-24">
-      <span className="flex items-center gap-2 text-sm font-medium uppercase tracking-widest text-orange-500">
-        <FolderGit2 className="h-4 w-4" aria-hidden="true" />
-        {page.eyebrow}
-      </span>
-      <h1 className="mt-4 text-4xl font-semibold tracking-tight text-black dark:text-white sm:text-5xl">
-        {page.title}
-      </h1>
-      <p className="mt-4 max-w-xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-        {page.description}
-      </p>
+      <PageHeader
+        icon={FolderGit2}
+        eyebrow={page.eyebrow}
+        title={page.title}
+        description={page.description}
+      />
 
       <FilterableProjectGrid
         projects={sorted}

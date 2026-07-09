@@ -24,6 +24,9 @@ const chipActive = "border-orange-500 bg-orange-500 font-medium text-white";
 const chipIdle =
   "border-zinc-300 text-zinc-600 hover:border-orange-500 hover:text-orange-500 dark:border-zinc-700 dark:text-zinc-400";
 
+const chipClass = (active: boolean): string =>
+  `${chipBase} ${active ? chipActive : chipIdle}`;
+
 /** Grille de projets avec filtre par compétence (chips). Client Component. */
 export function FilterableProjectGrid({
   projects,
@@ -47,7 +50,7 @@ export function FilterableProjectGrid({
             type="button"
             onClick={reset}
             aria-pressed={selected === null}
-            className={`${chipBase} ${selected === null ? chipActive : chipIdle}`}
+            className={chipClass(selected === null)}
           >
             {labels.filterAll}
           </button>
@@ -57,7 +60,7 @@ export function FilterableProjectGrid({
               type="button"
               onClick={() => toggle(skillId)}
               aria-pressed={selected === skillId}
-              className={`${chipBase} ${selected === skillId ? chipActive : chipIdle}`}
+              className={chipClass(selected === skillId)}
             >
               {label}
             </button>
