@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CalendarDays, GraduationCap, MapPin } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Education } from "@/lib/education";
@@ -22,8 +21,9 @@ export function EducationCard({ education, lang, presentLabel }: EducationCardPr
         </h2>
         {logo && (
           <div className="shrink-0 flex items-center justify-center rounded-xl bg-white px-3 py-2 ring-1 ring-zinc-200">
-            <Image
-              src={logo}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`}
               alt={`${institution} logo`}
               width={120}
               height={46}

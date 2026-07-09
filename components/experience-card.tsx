@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Building2, CalendarDays, MapPin } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Experience } from "@/lib/experiences";
@@ -33,8 +32,9 @@ export function ExperienceCard({
         </h2>
         {logo && (
           <div className="shrink-0 flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1.5 ring-1 ring-zinc-200">
-            <Image
-              src={logo}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`}
               alt={`${organization} logo`}
               width={36}
               height={36}
