@@ -31,16 +31,14 @@ export function ExperienceCard({
           {role[lang]}
         </h2>
         {logo && (
-          <div className="shrink-0 flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1.5 ring-1 ring-zinc-200">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`}
-              alt={`${organization} logo`}
-              width={36}
-              height={36}
-              className="object-contain"
-            />
-          </div>
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`}
+            alt={`${organization} logo`}
+            width={48}
+            height={48}
+            className="shrink-0 object-contain"
+          />
         )}
       </div>
 

@@ -20,16 +20,14 @@ export function EducationCard({ education, lang, presentLabel }: EducationCardPr
           {degree[lang]}
         </h2>
         {logo && (
-          <div className="shrink-0 flex items-center justify-center rounded-xl bg-white px-3 py-2 ring-1 ring-zinc-200">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`}
-              alt={`${institution} logo`}
-              width={52}
-              height={52}
-              className="object-contain"
-            />
-          </div>
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${logo}`}
+            alt={`${institution} logo`}
+            width={52}
+            height={52}
+            className="shrink-0 object-contain dark:brightness-0 dark:invert"
+          />
         )}
       </div>
 
