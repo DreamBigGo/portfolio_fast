@@ -32,13 +32,15 @@ export function ExperienceCard({
           {role[lang]}
         </h2>
         {logo && (
-          <Image
-            src={logo}
-            alt={`${organization} logo`}
-            width={52}
-            height={52}
-            className="shrink-0 rounded-lg object-contain"
-          />
+          <div className="shrink-0 flex h-12 w-12 items-center justify-center rounded-xl bg-white p-1.5 ring-1 ring-zinc-200">
+            <Image
+              src={logo}
+              alt={`${organization} logo`}
+              width={36}
+              height={36}
+              className="object-contain"
+            />
+          </div>
         )}
       </div>
 
