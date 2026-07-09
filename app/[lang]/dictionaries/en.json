@@ -27,6 +27,7 @@
     { "name": "Français", "level": "Fluent" },
     { "name": "English", "level": "Fluent" },
     { "name": "Gujarati", "level": "Fluent" },
+    { "name": "Hindi", "level": "Intermediate" },
     { "name": "Deutsch", "level": "Basic" }
   ],
   "skills": {

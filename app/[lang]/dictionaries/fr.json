@@ -27,6 +27,7 @@
     { "name": "Français", "level": "Courant" },
     { "name": "English", "level": "Courant" },
     { "name": "Gujarati", "level": "Courant" },
+    { "name": "Hindi", "level": "Intermédiaire" },
     { "name": "Deutsch", "level": "Notions" }
   ],
   "skills": {
