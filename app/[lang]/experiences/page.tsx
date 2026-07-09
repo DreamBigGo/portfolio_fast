@@ -29,7 +29,7 @@ export default async function ExperiencesPage({ params }: ExperiencesProps) {
         description={page.description}
       />
 
-      <div className="mt-12 flex flex-col gap-6">
+      <div className="stagger mt-12 flex flex-col gap-6">
         {experiences.map((experience) => (
           <ExperienceCard
             key={experience.id}

@@ -28,7 +28,7 @@ export default async function HobbiesPage({ params }: HobbiesProps) {
         description={page.description}
       />
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2">
+      <div className="stagger mt-12 grid gap-6 sm:grid-cols-2">
         {hobbies.map((hobby) => (
           <HobbyCard key={hobby.id} hobby={hobby} lang={lang} />
         ))}

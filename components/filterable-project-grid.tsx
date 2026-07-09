@@ -73,7 +73,7 @@ export function FilterableProjectGrid({
           {labels.filterEmpty}
         </p>
       ) : (
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        <div className="stagger mt-8 grid gap-6 sm:grid-cols-2">
           {filtered.map((project) => (
             <ProjectCard
               key={project.id}

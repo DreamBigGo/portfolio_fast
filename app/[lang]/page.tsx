@@ -23,7 +23,7 @@ export default async function Home({ params }: HomeProps) {
 
   return (
     <main className="flex flex-1 flex-col">
-      <section className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 py-24">
+      <section className="stagger mx-auto flex w-full max-w-3xl flex-col gap-6 px-6 py-24">
         <span className="text-sm font-medium uppercase tracking-widest text-orange-500">
           {home.eyebrow}
         </span>

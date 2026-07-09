@@ -46,7 +46,7 @@ export default async function ProjetDetailPage({ params }: ProjetDetailProps) {
   const { projectDetail } = dict;
 
   return (
-    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col px-6 py-24">
+    <main className="fade-up mx-auto flex w-full max-w-3xl flex-1 flex-col px-6 py-24">
       <Link
         href={`/${lang}/projets`}
         className="mb-8 inline-flex items-center gap-1.5 text-sm text-zinc-500 transition-colors hover:text-orange-500"

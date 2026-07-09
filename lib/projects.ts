@@ -50,8 +50,8 @@ export const projects: Project[] = [
       en: "Redesign of the AgirABCD association website.",
     },
     summary: {
-      fr: "Frontend HTML/CSS/JavaScript, backend PHP/SQL et base de données MariaDB. Objectifs : modernisation, accessibilité, sécurité et nouvelles fonctionnalités.",
-      en: "HTML/CSS/JavaScript frontend, PHP/SQL backend and a MariaDB database. Goals: modernisation, accessibility, security and new features.",
+      fr: "Travail en équipe de trois. Frontend HTML/CSS/JavaScript avec une carte interactive dynamique, backend PHP/SQL et base de données MariaDB. Objectifs : modernisation complète de l'UI/UX, accessibilité, sécurité et nouvelles fonctionnalités.",
+      en: "Team of three. HTML/CSS/JavaScript frontend with a dynamic interactive map, PHP/SQL backend and a MariaDB database. Goals: full UI/UX modernisation, accessibility, security and new features.",
     },
     skills: [
       { skillId: "php", level: "intermediate" },
@@ -101,8 +101,8 @@ export const projects: Project[] = [
       en: "Site about virtual machines and servers, hosted on a Linux Fedora VM.",
     },
     summary: {
-      fr: "Site vitrine réalisé avec Bootstrap, puis déployé et hébergé sur une machine virtuelle Linux Fedora (mise en ligne via SSH/SFTP).",
-      en: "Showcase site built with Bootstrap, then deployed and hosted on a Linux Fedora virtual machine (published over SSH/SFTP).",
+      fr: "Travail en binôme. Site vitrine réalisé avec Bootstrap, puis déployé et hébergé sur une machine virtuelle Linux Fedora (mise en ligne via SSH/SFTP), avec documentation des processus de déploiement et de sécurisation du serveur.",
+      en: "Pair project. Showcase site built with Bootstrap, then deployed and hosted on a Linux Fedora virtual machine (published over SSH/SFTP), with documentation of the deployment and server-hardening processes.",
     },
     skills: [
       { skillId: "html", level: "intermediate" },
@@ -118,6 +118,10 @@ export const projects: Project[] = [
     tagline: {
       fr: "Volet web d'une SAE Base de Données.",
       en: "Web part of a database SAE project.",
+    },
+    summary: {
+      fr: "Travail en équipe de quatre. Analyse structurelle d'un jeu de données et conception du schéma relationnel, puis création d'un site vitrine statique en HTML/CSS pour l'exposition des résultats.",
+      en: "Team of four. Structural analysis of a dataset and relational schema design, then a static HTML/CSS showcase site to present the results.",
     },
     skills: [
       { skillId: "sql", level: "intermediate" },

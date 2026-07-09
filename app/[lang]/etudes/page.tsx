@@ -29,7 +29,7 @@ export default async function EtudesPage({ params }: EtudesProps) {
         description={page.description}
       />
 
-      <div className="mt-12 flex flex-col gap-6">
+      <div className="stagger mt-12 flex flex-col gap-6">
         {educations.map((education) => (
           <EducationCard
             key={education.id}

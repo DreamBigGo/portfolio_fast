@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import "../globals.css";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { MainNav, type NavItem } from "@/components/main-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { isLocale, locales, type Locale } from "@/i18n/config";
+import { siteUrl } from "@/lib/site";
 import { getDictionary, type Dictionary } from "./dictionaries";
-
-/**
- * Applique `.dark` sur <html> avant la peinture initiale (anti-flash) :
- * choix persisté dans localStorage, sinon préférence système.
- */
-const themeInitScript = `(function(){try{var t=localStorage.getItem("theme");var d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;if(d)document.documentElement.classList.add("dark")}catch(e){}})()`;
 
 /** Construit les liens de navigation localisés dans l'ordre d'affichage. */
 function buildNavItems(lang: Locale, nav: Dictionary["nav"]): NavItem[] {
@@ -27,16 +20,6 @@ function buildNavItems(lang: Locale, nav: Dictionary["nav"]): NavItem[] {
     { id: "contact", href: `/${lang}/contact`, label: nav.contact },
   ];
 }
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 interface LangLayoutProps {
   children: React.ReactNode;
@@ -56,11 +39,23 @@ export async function generateMetadata({
 
   const dict = await getDictionary(lang);
   return {
+    metadataBase: new URL(siteUrl),
     title: {
       default: dict.home.metaTitle,
       template: `%s — Portfolio`,
     },
     description: dict.home.metaDescription,
+    alternates: {
+      languages: { fr: "/fr/", en: "/en/" },
+    },
+    openGraph: {
+      type: "website",
+      siteName: "Satyam Peshwa — Portfolio",
+      locale: lang === "fr" ? "fr_FR" : "en_US",
+      title: dict.home.metaTitle,
+      description: dict.home.metaDescription,
+      images: ["/og.png"],
+    },
   };
 }
 
@@ -75,32 +70,29 @@ export default async function LangLayout({
   const navItems = buildNavItems(lang, dict.nav);
 
   return (
-    <html
-      lang={lang}
-      suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
-      </head>
-      <body className="flex min-h-full flex-col bg-white text-black dark:bg-black dark:text-white">
-        <header className="relative flex items-center justify-between gap-4 border-b border-zinc-200 px-6 py-4 dark:border-zinc-800">
-          <Link
-            href={`/${lang}`}
-            className="flex items-center gap-2 text-sm font-semibold tracking-tight"
-          >
-            <span className="h-2 w-2 rounded-full bg-orange-500" />
-            Portfolio
-          </Link>
-          <div className="flex items-center gap-2 md:gap-4">
-            <MainNav lang={lang} items={navItems} />
-            <ThemeToggle label={dict.common.themeToggle} />
-            <LanguageSwitcher current={lang} />
-          </div>
-        </header>
-        {children}
-        <SiteFooter />
-      </body>
-    </html>
+    <>
+      {/* Le layout racine fixe lang="fr" ; on pose ici la locale réelle. */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `document.documentElement.lang=${JSON.stringify(lang)}`,
+        }}
+      />
+      <header className="relative flex items-center justify-between gap-4 border-b border-zinc-200 px-6 py-4 dark:border-zinc-800">
+        <Link
+          href={`/${lang}`}
+          className="flex items-center gap-2 text-sm font-semibold tracking-tight"
+        >
+          <span className="h-2 w-2 rounded-full bg-orange-500" />
+          Portfolio
+        </Link>
+        <div className="flex items-center gap-2 md:gap-4">
+          <MainNav lang={lang} items={navItems} />
+          <ThemeToggle label={dict.common.themeToggle} />
+          <LanguageSwitcher current={lang} />
+        </div>
+      </header>
+      {children}
+      <SiteFooter />
+    </>
   );
 }

@@ -65,7 +65,7 @@ export default async function ContactPage({ params }: ContactProps) {
         description={page.description}
       />
 
-      <div className="mt-12 flex flex-col gap-4">
+      <div className="stagger mt-12 flex flex-col gap-4">
         {channels.map(({ href, icon: Icon, name, value, hint, external }) => (
           <a
             key={name}
