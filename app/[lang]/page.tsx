@@ -1,4 +1,4 @@
-import { ArrowRight, Languages, Mail } from "lucide-react";
+import { ArrowRight, FileDown, Languages, Mail } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SkillsSection } from "@/components/skills-section";
@@ -65,6 +65,14 @@ export default async function Home({ params }: HomeProps) {
             <Mail className="h-4 w-4" aria-hidden="true" />
             {home.ctaContact}
           </Link>
+          <a
+            href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/cv.pdf`}
+            download
+            className="inline-flex items-center gap-2 rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium transition-colors hover:border-green-500 hover:text-green-600 dark:border-zinc-700"
+          >
+            <FileDown className="h-4 w-4" aria-hidden="true" />
+            {home.ctaCv}
+          </a>
         </div>
       </section>
 

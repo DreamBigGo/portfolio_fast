@@ -5,8 +5,16 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { MainNav, type NavItem } from "@/components/main-nav";
+import { SiteFooter } from "@/components/site-footer";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary, type Dictionary } from "./dictionaries";
+
+/**
+ * Applique `.dark` sur <html> avant la peinture initiale (anti-flash) :
+ * choix persisté dans localStorage, sinon préférence système.
+ */
+const themeInitScript = `(function(){try{var t=localStorage.getItem("theme");var d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;if(d)document.documentElement.classList.add("dark")}catch(e){}})()`;
 
 /** Construit les liens de navigation localisés dans l'ordre d'affichage. */
 function buildNavItems(lang: Locale, nav: Dictionary["nav"]): NavItem[] {
@@ -69,8 +77,12 @@ export default async function LangLayout({
   return (
     <html
       lang={lang}
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="flex min-h-full flex-col bg-white text-black dark:bg-black dark:text-white">
         <header className="relative flex items-center justify-between gap-4 border-b border-zinc-200 px-6 py-4 dark:border-zinc-800">
           <Link
@@ -82,10 +94,12 @@ export default async function LangLayout({
           </Link>
           <div className="flex items-center gap-2 md:gap-4">
             <MainNav lang={lang} items={navItems} />
+            <ThemeToggle label={dict.common.themeToggle} />
             <LanguageSwitcher current={lang} />
           </div>
         </header>
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

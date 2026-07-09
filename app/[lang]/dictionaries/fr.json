@@ -16,10 +16,12 @@
     "headlineEnd": ".",
     "description": "Développement, ingénierie logicielle et design d'interfaces. Découvrez mon parcours, mes compétences et mes réalisations.",
     "ctaProjects": "Voir les projets",
-    "ctaContact": "Me contacter"
+    "ctaContact": "Me contacter",
+    "ctaCv": "Télécharger mon CV"
   },
   "common": {
-    "present": "présent"
+    "present": "présent",
+    "themeToggle": "Basculer le thème clair/sombre"
   },
   "languages": [
     { "name": "Français", "level": "Courant" },
@@ -59,7 +61,10 @@
       "eyebrow": "Portfolio",
       "title": "Projets",
       "description": "Mes réalisations, filtrables par technologie et par domaine.",
-      "metaDescription": "Liste des réalisations avec filtres."
+      "metaDescription": "Liste des réalisations avec filtres.",
+      "filterLabel": "Filtrer par compétence",
+      "filterAll": "Tous",
+      "filterEmpty": "Aucun projet ne correspond à cette compétence."
     },
     "hobbies": {
       "eyebrow": "Portfolio",
@@ -70,8 +75,11 @@
     "contact": {
       "eyebrow": "Portfolio",
       "title": "Contact",
-      "description": "Un projet, une question ? Le formulaire de contact (géré via Server Actions) arrive ici.",
-      "metaDescription": "Formulaire de contact."
+      "description": "Un projet, une question ? Écrivez-moi ou retrouvez-moi sur les réseaux.",
+      "metaDescription": "Email et profils publics.",
+      "emailHint": "Réponse sous 48 h en général",
+      "githubHint": "Mes projets et contributions",
+      "linkedinHint": "Mon parcours professionnel"
     }
   },
   "projectDetail": {

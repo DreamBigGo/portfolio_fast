@@ -1,7 +1,7 @@
 import { FolderGit2 } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ProjectCard } from "@/components/project-card";
+import { FilterableProjectGrid } from "@/components/filterable-project-grid";
 import { isLocale } from "@/i18n/config";
 import { projects } from "@/lib/projects";
 import { getDictionary } from "../dictionaries";
@@ -44,16 +44,16 @@ export default async function ProjetsPage({ params }: ProjetsProps) {
         {page.description}
       </p>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2">
-        {sorted.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            lang={lang}
-            levelLabels={dict.skills.levels}
-          />
-        ))}
-      </div>
+      <FilterableProjectGrid
+        projects={sorted}
+        lang={lang}
+        levelLabels={dict.skills.levels}
+        labels={{
+          filterLabel: page.filterLabel,
+          filterAll: page.filterAll,
+          filterEmpty: page.filterEmpty,
+        }}
+      />
     </main>
   );
 }

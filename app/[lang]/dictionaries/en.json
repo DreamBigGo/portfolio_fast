@@ -16,10 +16,12 @@
     "headlineEnd": " web products.",
     "description": "Development, software engineering and interface design. Explore my background, skills and work.",
     "ctaProjects": "View projects",
-    "ctaContact": "Get in touch"
+    "ctaContact": "Get in touch",
+    "ctaCv": "Download my CV"
   },
   "common": {
-    "present": "present"
+    "present": "present",
+    "themeToggle": "Toggle light/dark theme"
   },
   "languages": [
     { "name": "Français", "level": "Fluent" },
@@ -59,7 +61,10 @@
       "eyebrow": "Portfolio",
       "title": "Projects",
       "description": "My work, filterable by technology and domain.",
-      "metaDescription": "List of projects with filters."
+      "metaDescription": "List of projects with filters.",
+      "filterLabel": "Filter by skill",
+      "filterAll": "All",
+      "filterEmpty": "No project matches this skill."
     },
     "hobbies": {
       "eyebrow": "Portfolio",
@@ -70,8 +75,11 @@
     "contact": {
       "eyebrow": "Portfolio",
       "title": "Contact",
-      "description": "A project, a question? The contact form (handled via Server Actions) is coming here.",
-      "metaDescription": "Contact form."
+      "description": "A project, a question? Email me or find me online.",
+      "metaDescription": "Email and public profiles.",
+      "emailHint": "Usually replies within 48 hours",
+      "githubHint": "My projects and contributions",
+      "linkedinHint": "My professional background"
     }
   },
   "projectDetail": {
